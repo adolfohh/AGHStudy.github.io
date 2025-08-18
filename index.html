@@ -7,6 +7,134 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos adicionales para la página principal */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .destacados {
+            background-color: var(--dark-gray);
+            padding: 80px 0;
+        }
+        
+        .destacados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .destacado-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .destacado-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary);
+        }
+        
+        .destacado-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .testimonios {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('img/testimonios-bg.jpg') center/cover fixed;
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonio-card {
+            background-color: rgba(31, 31, 31, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonio-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: rgba(255, 51, 51, 0.2);
+            font-family: serif;
+        }
+        
+        .testimonio-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonio-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonio-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--primary);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background-color: var(--dark);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
     <!-- Encabezado -->
@@ -28,10 +156,18 @@
 
     <!-- Hero -->
     <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="img/hero-video.mp4" type="video/mp4">
+            <!-- Fallback para navegadores que no soportan video -->
+            <img src="img/hero-bg.jpg" alt="Fondo hero">
+        </video>
         <div class="hero-content">
             <h2>Ingeniería en Tecnología de Manufactura</h2>
-            <p>Diseño mecánico y electrónica en todo su esplendor.</p>
-            <a href="https://youtube.com/" class="btn">Visitar Canal de YouTube <i class="fas fa-external-link-alt"></i></a>
+            <p>Soluciones integradas en diseño mecánico, electrónica y automatización industrial</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn">Nuestros Servicios</a>
+                <a href="#contacto" class="btn btn-outline">Contactar Ahora</a>
+            </div>
         </div>
     </section>
 
@@ -46,9 +182,34 @@
                     <p>A lo largo de mi trayectoria he trabajado en proyectos que combinan precisión técnica con creatividad, desde el desarrollo de sistemas de automatización y control hasta la fabricación personalizada con tecnologías CNC, impresión 3D y corte láser.</p>
                     
                     <p>Mi enfoque es simple: <strong>transformar ideas en realidades funcionales</strong> que aporten valor, eficiencia y un toque de innovación. Creo que cada proyecto es una oportunidad para aprender, mejorar y dejar una huella positiva.</p>
+                    
+                    <div class="sobre-mi-datos">
+                        <div class="dato-item">
+                            <i class="fas fa-award"></i>
+                            <span>10+ años de experiencia</span>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>50+ proyectos completados</span>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fas fa-users"></i>
+                            <span>20+ clientes satisfechos</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="sobre-mi-foto">
                     <img src="img/foto.jpg" alt="Adolfo Guillermo Hernández Hernández">
+                    <div class="certificaciones">
+                        <div class="certificado">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificado SolidWorks</span>
+                        </div>
+                        <div class="certificado">
+                            <i class="fas fa-certificate"></i>
+                            <span>Electricista Industrial</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,26 +219,87 @@
     <section id="servicios" class="servicios">
         <div class="container">
             <h2>Áreas de experiencia</h2>
+            <p class="section-subtitle">Soluciones técnicas especializadas para diversas necesidades industriales</p>
+            
             <div class="servicios-grid">
-                <div class="servicio-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Diseño mecánico</h3>
-                    <p>Modelado 3D en SolidWorks y manufactura avanzada.</p>
+                <a href="electricidad.html" class="servicio-card-link">
+                    <div class="servicio-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Electricidad Industrial</h3>
+                        <p>Instalaciones, mantenimiento y sistemas eléctricos completos.</p>
+                        <span class="ver-mas">Ver especialidades <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="refrigeracion.html" class="servicio-card-link">
+                    <div class="servicio-card">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>Refrigeración y Climas</h3>
+                        <p>Sistemas de climatización y refrigeración industrial.</p>
+                        <span class="ver-mas">Ver especialidades <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="soldadura.html" class="servicio-card-link">
+                    <div class="servicio-card">
+                        <i class="fas fa-fire"></i>
+                        <h3>Soldadura y Herrería</h3>
+                        <p>Técnicas de soldadura y fabricación metálica profesional.</p>
+                        <span class="ver-mas">Ver especialidades <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="diseno-mecanico.html" class="servicio-card-link">
+                    <div class="servicio-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Diseño Mecánico</h3>
+                        <p>Modelado 3D en SolidWorks y manufactura avanzada.</p>
+                        <span class="ver-mas">Ver especialidades <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="impresion-3d.html" class="servicio-card-link">
+                    <div class="servicio-card">
+                        <i class="fas fa-print"></i>
+                        <h3>Impresión 3D</h3>
+                        <p>Prototipado rápido y manufactura aditiva profesional.</p>
+                        <span class="ver-mas">Ver especialidades <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="cnc-laser.html" class="servicio-card-link">
+                    <div class="servicio-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>CNC y Láser</h3>
+                        <p>Corte, grabado y fresado de precisión industrial.</p>
+                        <span class="ver-mas">Ver especialidades <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados -->
+    <section class="destacados">
+        <div class="container">
+            <h2>¿Por qué elegirnos?</h2>
+            <p class="section-subtitle">Ventajas competitivas que nos diferencian</p>
+            
+            <div class="destacados-grid">
+                <div class="destacado-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Experiencia Comprobada</h3>
+                    <p>Más de una década resolviendo desafíos técnicos complejos en diversos sectores industriales.</p>
                 </div>
-                <div class="servicio-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Electrónica</h3>
-                    <p>Circuitos, automatización y sistemas embebidos.</p>
+                <div class="destacado-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Equipamiento Moderno</h3>
+                    <p>Tecnología de punta en diseño, fabricación y pruebas para garantizar resultados óptimos.</p>
                 </div>
-                <div class="servicio-card">
-                    <i class="fas fa-print"></i>
-                    <h3>Impresión 3D</h3>
-                    <p>Prototipado rápido y manufactura aditiva.</p>
+                <div class="destacado-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Enfoque Personalizado</h3>
+                    <p>Soluciones adaptadas a las necesidades específicas de cada cliente y proyecto.</p>
                 </div>
-                <div class="servicio-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>CNC y Láser</h3>
-                    <p>Corte, grabado y fresado de precisión.</p>
+                <div class="destacado-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Entregas Oportunas</h3>
+                    <p>Cumplimiento estricto de plazos sin comprometer la calidad del trabajo.</p>
                 </div>
             </div>
         </div>
@@ -87,24 +309,114 @@
     <section id="proyectos" class="proyectos">
         <div class="container">
             <h2>Proyectos destacados</h2>
+            <p class="section-subtitle">Algunos ejemplos de nuestro trabajo reciente</p>
+            
             <div class="proyectos-grid">
                 <div class="proyecto-card">
-                    <img src="img/brazo.png" alt="Proyecto 1">
+                    <img src="img/brazo.png" alt="Brazo Robótico">
+                    <div class="proyecto-tags">
+                        <span class="tag-diseno">Diseño</span>
+                        <span class="tag-electronica">Electrónica</span>
+                    </div>
                     <h3>Brazo Robótico</h3>
-                    <p>Diseño en SolidWorks con control Arduino.</p>
-                    <a href="#" class="btn-small">Ver más</a>
+                    <p>Diseño en SolidWorks con control Arduino para automatización de procesos.</p>
+                    <div class="proyecto-footer">
+                        <a href="proyecto-brazo-robotico.html" class="btn-small">Ver detalles</a>
+                        <div class="proyecto-fecha">Enero 2024</div>
+                    </div>
                 </div>
                 <div class="proyecto-card">
-                    <img src="img/proyecto2.jpg" alt="Proyecto 2">
-                    <h3>Placa PCB</h3>
-                    <p>Diseño electrónico y fabricación personalizada.</p>
-                    <a href="#" class="btn-small">Ver más</a>
+                    <img src="img/Ceumb.png" alt="Placa PCB">
+                    <div class="proyecto-tags">
+                        <span class="tag-electronica">Electrónica</span>
+                    </div>
+                    <h3>Placa PCB Personalizada</h3>
+                    <p>Diseño electrónico y fabricación de placa para sistema de control industrial.</p>
+                    <div class="proyecto-footer">
+                        <a href="proyecto-placa-pcb.html" class="btn-small">Ver detalles</a>
+                        <div class="proyecto-fecha">Noviembre 2023</div>
+                    </div>
                 </div>
                 <div class="proyecto-card">
-                    <img src="img/diskey.png" alt="Proyecto 3">
+                    <img src="img/diskey.png" alt="Enclosure 3D">
+                    <div class="proyecto-tags">
+                        <span class="tag-diseno">Diseño</span>
+                        <span class="tag-impresion">Impresión 3D</span>
+                    </div>
                     <h3>Enclosure 3D</h3>
-                    <p>Carcasa funcional impresa en 3D.</p>
-                    <a href="#" class="btn-small">Ver más</a>
+                    <p>Carcasa funcional impresa en 3D con tolerancias de ±0.1mm.</p>
+                    <div class="proyecto-footer">
+                        <a href="proyecto-enclosure.html" class="btn-small">Ver detalles</a>
+                        <div class="proyecto-fecha">Agosto 2023</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="centrado">
+                <a href="portafolio.html" class="btn">Ver portafolio completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios">
+        <div class="container">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p class="section-subtitle">Experiencias reales de colaboración</p>
+            
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="testimonio-content">
+                        <p>"El trabajo de AGHStudy en nuestro sistema de automatización superó todas las expectativas. Entregaron un proyecto complejo antes de lo previsto y con una calidad excepcional."</p>
+                        <div class="testimonio-author">
+                            <img src="img/cliente1.jpg" alt="Cliente 1">
+                            <div>
+                                <h4>Carlos Mendoza</h4>
+                                <p>Director de Operaciones, InduTech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-content">
+                        <p>"Como startup, necesitábamos prototipos funcionales rápidamente. AGHStudy no solo los entregó a tiempo, sino que también optimizó nuestros diseños para reducir costos de producción."</p>
+                        <div class="testimonio-author">
+                            <img src="img/cliente2.jpg" alt="Cliente 2">
+                            <div>
+                                <h4>Ana Rodríguez</h4>
+                                <p>CEO, TechSolutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card">
+                    <div class="testimonio-content">
+                        <p>"Su conocimiento en sistemas eléctricos industriales resolvió un problema que llevábamos meses intentando solucionar. Profesionales altamente capacitados y comprometidos."</p>
+                        <div class="testimonio-author">
+                            <img src="img/cliente3.jpg" alt="Cliente 3">
+                            <div>
+                                <h4>Roberto Sánchez</h4>
+                                <p>Gerente de Planta, ElectroMecánica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+                <p>Contáctanos hoy mismo para discutir cómo podemos ayudarte a materializar tus ideas con soluciones técnicas innovadoras y de alta calidad.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#contacto" class="btn">Solicitar cotización</a>
+                    <a href="tel:+525512345678" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> Llamar ahora
+                    </a>
                 </div>
             </div>
         </div>
@@ -116,15 +428,31 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <h3>AGHStudy | Ingeniería & Tecnología</h3>
+                    <p>Transformando ideas en realidades técnicas desde 2015</p>
                     <p>© 2025 Todos los derechos reservados</p>
                 </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre-mi">Sobre mí</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="blog.html">Blog técnico</a></li>
+                    </ul>
                 </div>
-                <div class="footer-contact">
-                    <p><i class="fas fa-envelope"></i> contacto@aghstudy.com</p>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> contacto@aghstudy.com</p>
+                        <p><i class="fas fa-phone"></i> +52 55 1234 5678</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
+                    </div>
                 </div>
             </div>
         </div>

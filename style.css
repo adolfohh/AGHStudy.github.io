@@ -429,3 +429,910 @@ footer {
         text-align: center;
     }
 }
+
+/* Estilos para las tarjetas enlazables */
+.servicio-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.servicio-card-link:hover {
+    transform: scale(1.03);
+}
+
+.servicio-card-link .servicio-card {
+    height: 100%;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.ver-mas {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary);
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.servicio-card-link:hover .ver-mas {
+    opacity: 1;
+}
+
+/* Efecto de hover mejorado para todas las tarjetas */
+.servicio-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.servicio-card:hover::after {
+    opacity: 1;
+}
+
+/* Animación de pulsación al hacer clic */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.servicio-card-link:active .servicio-card {
+    animation: pulse 0.3s ease;
+}
+
+/* Hero de especialidad */
+.hero-electricidad {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/electricidad-bg.jpg') center/cover no-repeat;
+    color: var(--light);
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.hero-refrigeracion {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/refrigeracion-bg.jpg') center/cover no-repeat;
+}
+
+.hero-soldadura {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/soldadura-bg.jpg') center/cover no-repeat;
+}
+
+/* Especialidades */
+.especialidades {
+    padding: 80px 0;
+    background-color: var(--dark-gray);
+}
+
+.especialidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.especialidad-card {
+    background-color: var(--gray);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+}
+
+.especialidad-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.especialidad-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.especialidad-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Proyectos relacionados */
+.proyectos-relacionados {
+    padding: 80px 0;
+}
+
+.centrado {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Estilos específicos para refrigeración */
+.hero-refrigeracion {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/refrigeracion-bg.jpg') center/cover no-repeat;
+    color: var(--light);
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+/* Iconos específicos para refrigeración */
+.especialidad-card .fa-snowflake { color: #00b4d8; }
+.especialidad-card .fa-fan { color: #48cae4; }
+.especialidad-card .fa-thermometer-half { color: #0096c7; }
+.especialidad-card .fa-tools { color: #0077b6; }
+
+/* Sección de proceso */
+.proceso-refrigeracion {
+    background-color: var(--dark-gray);
+    padding: 80px 0;
+}
+
+.pasos-refrigeracion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.paso {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: var(--gray);
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+    border-top: 4px solid #00b4d8;
+    transition: transform 0.3s ease;
+}
+
+.paso:hover {
+    transform: translateY(-10px);
+}
+
+.paso-numero {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    background-color: #00b4d8;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+}
+
+/* Efecto de tarjetas de especialidad */
+.especialidad-card {
+    transition: all 0.3s ease;
+}
+
+.especialidad-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+}
+
+/* Estilos específicos para soldadura */
+.hero-soldadura {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/soldadura-bg.jpg') center/cover no-repeat;
+    color: var(--light);
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+/* Colores temáticos para soldadura */
+:root {
+    --soldadura-primary: #ff6b35;
+    --soldadura-secondary: #f7c59f;
+    --soldadura-dark: #5a2a0a;
+}
+
+/* Iconos específicos para soldadura */
+.especialidad-card .fa-fire { color: var(--soldadura-primary); }
+.especialidad-card .fa-hammer { color: var(--soldadura-secondary); }
+.especialidad-card .fa-industry { color: #ef476f; }
+.especialidad-card .fa-shield-alt { color: #ffd166; }
+
+/* Sección de técnicas */
+.tecnicas-soldadura {
+    background-color: var(--dark-gray);
+    padding: 80px 0;
+}
+
+.tecnicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.tecnica-card {
+    background-color: var(--gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--soldadura-primary);
+}
+
+.tecnica-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+}
+
+.tecnica-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.tecnica-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tecnica-card:hover .tecnica-img img {
+    transform: scale(1.1);
+}
+
+.tecnica-content {
+    padding: 20px;
+}
+
+.tecnica-content h3 {
+    color: var(--soldadura-secondary);
+    margin-bottom: 10px;
+}
+
+/* Proceso de soldadura */
+.proceso-soldadura {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('img/proceso-soldadura-bg.jpg') center/cover fixed;
+    padding: 80px 0;
+    color: white;
+}
+
+.proceso-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.proceso-steps::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--soldadura-primary), var(--soldadura-secondary));
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    padding-left: 70px;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-color: var(--soldadura-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    border: 4px solid var(--soldadura-dark);
+}
+
+.step-content {
+    background-color: rgba(31, 31, 31, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    border-left: 3px solid var(--soldadura-secondary);
+}
+
+/* Responsive para proceso */
+@media (max-width: 768px) {
+    .proceso-steps::before {
+        left: 25px;
+    }
+    
+    .step {
+        padding-left: 60px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Efecto de tarjetas de especialidad */
+.especialidad-card {
+    transition: all 0.3s ease;
+}
+
+.especialidad-card:hover {
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+/* Estilos específicos para diseño mecánico */
+.hero-diseno {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/diseno-bg.jpg') center/cover no-repeat;
+    color: var(--light);
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+/* Colores temáticos para diseño mecánico */
+:root {
+    --diseno-primary: #3a86ff;
+    --diseno-secondary: #8338ec;
+    --diseno-accent: #ff006e;
+}
+
+/* Iconos específicos para diseño mecánico */
+.especialidad-card .fa-cogs { color: var(--diseno-primary); }
+.especialidad-card .fa-cube { color: var(--diseno-secondary); }
+.especialidad-card .fa-project-diagram { color: #ff006e; }
+.especialidad-card .fa-tools { color: #fb5607; }
+
+/* Sección de software */
+.software-section {
+    background-color: var(--dark-gray);
+    padding: 80px 0;
+}
+
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.software-card {
+    background-color: var(--gray);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.software-card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--diseno-primary);
+    box-shadow: 0 10px 20px rgba(58, 134, 255, 0.2);
+}
+
+.software-card img {
+    height: 80px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+/* Proceso de diseño */
+.proceso-diseno {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('img/proceso-diseno-bg.jpg') center/cover fixed;
+    padding: 80px 0;
+    color: white;
+}
+
+.proceso-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.proceso-paso {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    border-top: 4px solid var(--diseno-primary);
+}
+
+.paso-icono {
+    font-size: 2.5rem;
+    color: var(--diseno-primary);
+    margin-bottom: 20px;
+}
+
+/* Aplicaciones */
+.aplicaciones-section {
+    padding: 80px 0;
+}
+
+.aplicaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.aplicacion-card {
+    background-color: var(--gray);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.aplicacion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(58, 134, 255, 0.2);
+}
+
+.aplicacion-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.aplicacion-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.aplicacion-card:hover .aplicacion-img img {
+    transform: scale(1.1);
+}
+
+.aplicacion-content {
+    padding: 20px;
+}
+
+.aplicacion-content h3 {
+    color: var(--diseno-primary);
+    margin-bottom: 10px;
+}
+
+/* Efecto de tarjetas de especialidad */
+.especialidad-card {
+    transition: all 0.3s ease;
+}
+
+.especialidad-card:hover {
+    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+}
+
+/* Estilos para la página principal mejorada */
+
+/* Hero mejorado */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light);
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+/* Sobre mí mejorado */
+.sobre-mi-datos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.dato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--dark-gray);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-left: 3px solid var(--primary);
+}
+
+.dato-item i {
+    color: var(--primary);
+}
+
+.certificaciones {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certificado {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Sección de servicios mejorada */
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+}
+
+/* Proyectos mejorados */
+.proyecto-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tag-diseno {
+    background-color: #3a86ff;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.tag-electronica {
+    background-color: #ffbe0b;
+    color: black;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.tag-impresion {
+    background-color: #8338ec;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.proyecto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.proyecto-fecha {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Footer mejorado */
+.footer-links h4, .footer-social h4 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary);
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 20px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .certificaciones {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+
+/* Estilos específicos para CNC y Láser */
+.hero-cnc {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/cnc-bg.jpg') center/cover no-repeat;
+    color: var(--light);
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+/* Colores temáticos */
+:root {
+    --cnc-primary: #00b4d8;
+    --cnc-secondary: #0077b6;
+    --cnc-accent: #90e0ef;
+}
+
+/* Iconos específicos */
+.especialidad-card .fa-robot { color: var(--cnc-primary); }
+.especialidad-card .fa-cut { color: var(--cnc-secondary); }
+.especialidad-card .fa-ruler-combined { color: #90e0ef; }
+.especialidad-card .fa-industry { color: #0077b6; }
+
+/* Sección de tecnologías */
+.tecnologias-section {
+    background-color: var(--dark-gray);
+    padding: 80px 0;
+}
+
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.tecnologia-card {
+    background-color: var(--gray);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--cnc-primary);
+}
+
+.tecnologia-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+}
+
+.tecnologia-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.tecnologia-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tecnologia-card:hover .tecnologia-img img {
+    transform: scale(1.1);
+}
+
+.tecnologia-content {
+    padding: 25px;
+}
+
+.tecnologia-content h3 {
+    color: var(--cnc-accent);
+    margin-bottom: 15px;
+}
+
+/* Proceso de trabajo */
+.proceso-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('img/proceso-cnc-bg.jpg') center/cover fixed;
+    padding: 80px 0;
+    color: white;
+}
+
+.proceso-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.proceso-step {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: rgba(31, 31, 31, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    border-top: 4px solid var(--cnc-primary);
+}
+
+.step-icon {
+    font-size: 2rem;
+    color: var(--cnc-primary);
+    margin-bottom: 20px;
+}
+
+/* Materiales */
+.materiales-section {
+    padding: 80px 0;
+}
+
+.materiales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.material-card {
+    background-color: var(--gray);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--cnc-primary);
+}
+
+.material-icon {
+    font-size: 2rem;
+    color: var(--cnc-primary);
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-cnc {
+        height: 50vh;
+    }
+    
+    .proceso-step {
+        min-width: 100%;
+    }
+}

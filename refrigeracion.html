@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGHStudy | Refrigeración y Climatización</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos específicos para refrigeración */
+        .hero-refrigeracion {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('img/refrigeracion-bg.jpg') center/cover no-repeat;
+            color: var(--light);
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        
+        .especialidad-card .fa-snowflake { color: #00b4d8; }
+        .especialidad-card .fa-fan { color: #48cae4; }
+        .especialidad-card .fa-thermometer-half { color: #0096c7; }
+        .especialidad-card .fa-tools { color: #0077b6; }
+        
+        .proceso-refrigeracion {
+            background-color: var(--dark-gray);
+            padding: 80px 0;
+        }
+        
+        .pasos-refrigeracion {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .paso {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            border-top: 4px solid #00b4d8;
+        }
+        
+        .paso-numero {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background-color: #00b4d8;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="AGHStudy Logo">
+            <div class="logo-text">
+                <h1>AGHStudy</h1>
+                <p>Ingeniería y Tecnología</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html#sobre-mi">Sobre mí</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero de especialidad -->
+    <section class="hero-refrigeracion">
+        <div class="hero-content">
+            <h2>Refrigeración y Climatización</h2>
+            <p>Tecnología avanzada para el control térmico y ambiental</p>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="especialidades">
+        <div class="container">
+            <h2>Nuestras Especialidades en Refrigeración</h2>
+            <div class="especialidades-grid">
+                <div class="especialidad-card">
+                    <i class="fas fa-snowflake"></i>
+                    <h3>Técnico en Sistemas de Refrigeración</h3>
+                    <p>Instalación y mantenimiento de sistemas de refrigeración comercial e industrial, incluyendo cámaras frigoríficas y equipos de conservación.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-fan"></i>
+                    <h3>Especialista en Climatización</h3>
+                    <p>Diseño e implementación de sistemas de aire acondicionado central y split para todo tipo de espacios.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Técnico en Aire Acondicionado</h3>
+                    <p>Reparación y mantenimiento de equipos de aire acondicionado residenciales y comerciales.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Mantenimiento de Sistemas HVAC</h3>
+                    <p>Programas de mantenimiento preventivo y correctivo para sistemas de calefacción, ventilación y aire acondicionado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de trabajo -->
+    <section class="proceso-refrigeracion">
+        <div class="container">
+            <h2>Nuestro Proceso de Trabajo</h2>
+            <div class="pasos-refrigeracion">
+                <div class="paso">
+                    <div class="paso-numero">1</div>
+                    <h3>Evaluación Técnica</h3>
+                    <p>Análisis detallado de las necesidades de refrigeración/climatización y evaluación del espacio.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">2</div>
+                    <h3>Diseño Personalizado</h3>
+                    <p>Creación de un sistema adaptado a sus requerimientos específicos y condiciones ambientales.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">3</div>
+                    <h3>Instalación Profesional</h3>
+                    <p>Montaje de equipos con los más altos estándares de calidad y seguridad.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">4</div>
+                    <h3>Mantenimiento Continuo</h3>
+                    <p>Programas de mantenimiento periódico para garantizar óptimo funcionamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos relacionados -->
+    <section class="proyectos-relacionados">
+        <div class="container">
+            <h2>Proyectos de Refrigeración</h2>
+            <div class="proyectos-grid">
+                <div class="proyecto-card">
+                    <img src="img/proyecto-refri-1.jpg" alt="Instalación industrial">
+                    <h3>Sistema de Refrigeración Industrial</h3>
+                    <p>Instalación completa para planta procesadora de alimentos.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="img/proyecto-refri-2.jpg" alt="Climatización comercial">
+                    <h3>Climatización Comercial</h3>
+                    <p>Sistema centralizado para centro comercial con 20 unidades.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="img/proyecto-refri-3.jpg" alt="Mantenimiento HVAC">
+                    <h3>Mantenimiento HVAC</h3>
+                    <p>Programa anual de mantenimiento para edificio corporativo.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+            </div>
+            <div class="centrado">
+                <a href="index.html#servicios" class="btn"><i class="fas fa-arrow-left"></i> Volver a Áreas de Experiencia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>AGHStudy | Ingeniería & Tecnología</h3>
+                    <p>© 2025 Todos los derechos reservados</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> contacto@aghstudy.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

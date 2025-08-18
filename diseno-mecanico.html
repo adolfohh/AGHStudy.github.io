@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGHStudy | Diseño Mecánico</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos específicos para diseño mecánico */
+        .hero-diseno {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('img/diseno-bg.jpg') center/cover no-repeat;
+            color: var(--light);
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        
+        /* Colores temáticos para diseño mecánico */
+        :root {
+            --diseno-primary: #3a86ff;
+            --diseno-secondary: #8338ec;
+            --diseno-accent: #ff006e;
+        }
+        
+        .especialidad-card .fa-cogs { color: var(--diseno-primary); }
+        .especialidad-card .fa-cube { color: var(--diseno-secondary); }
+        .especialidad-card .fa-project-diagram { color: #ff006e; }
+        .especialidad-card .fa-tools { color: #fb5607; }
+        
+        .software-section {
+            background-color: var(--dark-gray);
+            padding: 80px 0;
+        }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .software-card {
+            background-color: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .software-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--diseno-primary);
+            box-shadow: 0 10px 20px rgba(58, 134, 255, 0.2);
+        }
+        
+        .software-card img {
+            height: 80px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        
+        .proceso-diseno {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('img/proceso-diseno-bg.jpg') center/cover fixed;
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .proceso-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .proceso-paso {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: rgba(31, 31, 31, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            border-top: 4px solid var(--diseno-primary);
+        }
+        
+        .paso-icono {
+            font-size: 2.5rem;
+            color: var(--diseno-primary);
+            margin-bottom: 20px;
+        }
+        
+        .aplicaciones-section {
+            padding: 80px 0;
+        }
+        
+        .aplicaciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .aplicacion-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .aplicacion-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(58, 134, 255, 0.2);
+        }
+        
+        .aplicacion-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .aplicacion-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .aplicacion-card:hover .aplicacion-img img {
+            transform: scale(1.1);
+        }
+        
+        .aplicacion-content {
+            padding: 20px;
+        }
+        
+        .aplicacion-content h3 {
+            color: var(--diseno-primary);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="AGHStudy Logo">
+            <div class="logo-text">
+                <h1>AGHStudy</h1>
+                <p>Ingeniería y Tecnología</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html#sobre-mi">Sobre mí</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero de especialidad -->
+    <section class="hero-diseno">
+        <div class="hero-content">
+            <h2>Diseño Mecánico</h2>
+            <p>Innovación y precisión en cada componente</p>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="especialidades">
+        <div class="container">
+            <h2>Nuestras Especialidades en Diseño Mecánico</h2>
+            <div class="especialidades-grid">
+                <div class="especialidad-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Diseño de Máquinas</h3>
+                    <p>Creación de sistemas mecánicos completos desde el concepto hasta los planos de fabricación.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-cube"></i>
+                    <h3>Modelado 3D Paramétrico</h3>
+                    <p>Desarrollo de modelos tridimensionales con relaciones paramétricas para flexibilidad en el diseño.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Análisis de Elementos Finitos</h3>
+                    <p>Simulaciones FEA para validar resistencia, fatiga y comportamiento térmico de componentes.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Diseño para Manufactura</h3>
+                    <p>Optimización de piezas considerando procesos de fabricación como mecanizado, fundición o estampado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software que utilizamos -->
+    <section class="software-section">
+        <div class="container">
+            <h2>Software que Dominamos</h2>
+            <div class="software-grid">
+                <div class="software-card">
+                    <img src="img/solidworks-logo.png" alt="SolidWorks">
+                    <h3>SolidWorks</h3>
+                    <p>Modelado sólido, ensamblajes, planos técnicos y simulaciones avanzadas.</p>
+                </div>
+                <div class="software-card">
+                    <img src="img/autocad-logo.png" alt="AutoCAD">
+                    <h3>AutoCAD</h3>
+                    <p>Dibujo técnico 2D y modelado 3D básico para planos de fabricación.</p>
+                </div>
+                <div class="software-card">
+                    <img src="img/inventor-logo.png" alt="Inventor">
+                    <h3>Inventor</h3>
+                    <p>Diseño paramétrico y documentación técnica de productos.</p>
+                </div>
+                <div class="software-card">
+                    <img src="img/ansys-logo.png" alt="ANSYS">
+                    <h3>ANSYS</h3>
+                    <p>Análisis avanzado por elementos finitos y dinámica de fluidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de diseño -->
+    <section class="proceso-diseno">
+        <div class="container">
+            <h2>Nuestro Proceso de Diseño</h2>
+            <div class="proceso-container">
+                <div class="proceso-paso">
+                    <div class="paso-icono">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Conceptualización</h3>
+                    <p>Definición de requisitos, restricciones y generación de ideas iniciales mediante sketches y diagramas.</p>
+                </div>
+                <div class="proceso-paso">
+                    <div class="paso-icono">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Diseño Preliminar</h3>
+                    <p>Creación de modelos 3D básicos, análisis de alternativas y selección de la mejor solución.</p>
+                </div>
+                <div class="proceso-paso">
+                    <div class="paso-icono">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Modelado Detallado</h3>
+                    <p>Desarrollo del modelo 3D completo con todos los componentes, ajustes y relaciones mecánicas.</p>
+                </div>
+                <div class="proceso-paso">
+                    <div class="paso-icono">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Validación</h3>
+                    <p>Análisis de tensiones, interferencias, movimientos y simulaciones para verificar el diseño.</p>
+                </div>
+                <div class="proceso-paso">
+                    <div class="paso-icono">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Documentación</h3>
+                    <p>Generación de planos técnicos, listas de materiales y especificaciones de fabricación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplicaciones -->
+    <section class="aplicaciones-section">
+        <div class="container">
+            <h2>Aplicaciones del Diseño Mecánico</h2>
+            <div class="aplicaciones-grid">
+                <div class="aplicacion-card">
+                    <div class="aplicacion-img">
+                        <img src="img/aplicacion-automotriz.jpg" alt="Industria automotriz">
+                    </div>
+                    <div class="aplicacion-content">
+                        <h3>Industria Automotriz</h3>
+                        <p>Diseño de componentes, sistemas de transmisión y ensamblajes completos para vehículos.</p>
+                    </div>
+                </div>
+                <div class="aplicacion-card">
+                    <div class="aplicacion-img">
+                        <img src="img/aplicacion-aeroespacial.jpg" alt="Sector aeroespacial">
+                    </div>
+                    <div class="aplicacion-content">
+                        <h3>Sector Aeroespacial</h3>
+                        <p>Componentes ligeros y resistentes para aeronaves, satélites y sistemas espaciales.</p>
+                    </div>
+                </div>
+                <div class="aplicacion-card">
+                    <div class="aplicacion-img">
+                        <img src="img/aplicacion-medica.jpg" alt="Dispositivos médicos">
+                    </div>
+                    <div class="aplicacion-content">
+                        <h3>Dispositivos Médicos</h3>
+                        <p>Equipos de precisión, prótesis e instrumentos quirúrgicos con altos estándares.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos relacionados -->
+    <section class="proyectos-relacionados">
+        <div class="container">
+            <h2>Proyectos de Diseño Mecánico</h2>
+            <div class="proyectos-grid">
+                <div class="proyecto-card">
+                    <img src="img/proyecto-diseno-1.jpg" alt="Mecanismo industrial">
+                    <h3>Mecanismo de Transferencia</h3>
+                    <p>Sistema automatizado para línea de producción con tolerancias de ±0.01mm.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="img/proyecto-diseno-2.jpg" alt="Prototipo 3D">
+                    <h3>Prototipo de Producto</h3>
+                    <p>Diseño y validación de un nuevo dispositivo para mercado industrial.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="img/proyecto-diseno-3.jpg" alt="Reductor de velocidad">
+                    <h3>Reductor de Velocidad</h3>
+                    <p>Caja de engranajes compacta con relación 15:1 para aplicación especializada.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+            </div>
+            <div class="centrado">
+                <a href="index.html#servicios" class="btn"><i class="fas fa-arrow-left"></i> Volver a Áreas de Experiencia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>AGHStudy | Ingeniería & Tecnología</h3>
+                    <p>© 2025 Todos los derechos reservados</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> contacto@aghstudy.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

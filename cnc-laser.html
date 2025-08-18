@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGHStudy | CNC y Corte Láser</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos específicos para CNC y Láser */
+        .hero-cnc {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('img/cnc-bg.jpg') center/cover no-repeat;
+            color: var(--light);
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        
+        /* Colores temáticos */
+        :root {
+            --cnc-primary: #00b4d8;
+            --cnc-secondary: #0077b6;
+            --cnc-accent: #90e0ef;
+        }
+        
+        .especialidad-card .fa-robot { color: var(--cnc-primary); }
+        .especialidad-card .fa-cut { color: var(--cnc-secondary); }
+        .especialidad-card .fa-ruler-combined { color: #90e0ef; }
+        .especialidad-card .fa-industry { color: #0077b6; }
+        
+        .tecnologias-section {
+            background-color: var(--dark-gray);
+            padding: 80px 0;
+        }
+        
+        .tecnologias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .tecnologia-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--cnc-primary);
+        }
+        
+        .tecnologia-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+        }
+        
+        .tecnologia-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .tecnologia-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .tecnologia-card:hover .tecnologia-img img {
+            transform: scale(1.1);
+        }
+        
+        .tecnologia-content {
+            padding: 25px;
+        }
+        
+        .tecnologia-content h3 {
+            color: var(--cnc-accent);
+            margin-bottom: 15px;
+        }
+        
+        .proceso-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('img/proceso-cnc-bg.jpg') center/cover fixed;
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .proceso-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .proceso-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: rgba(31, 31, 31, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            border-top: 4px solid var(--cnc-primary);
+        }
+        
+        .step-icon {
+            font-size: 2rem;
+            color: var(--cnc-primary);
+            margin-bottom: 20px;
+        }
+        
+        .materiales-section {
+            padding: 80px 0;
+        }
+        
+        .materiales-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .material-card {
+            background-color: var(--gray);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--cnc-primary);
+        }
+        
+        .material-icon {
+            font-size: 2rem;
+            color: var(--cnc-primary);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-cnc {
+                height: 50vh;
+            }
+            
+            .proceso-step {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="AGHStudy Logo">
+            <div class="logo-text">
+                <h1>AGHStudy</h1>
+                <p>Ingeniería y Tecnología</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html#sobre-mi">Sobre mí</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero de especialidad -->
+    <section class="hero-cnc">
+        <div class="hero-content">
+            <h2>CNC y Corte Láser</h2>
+            <p>Precisión milimétrica en fabricación digital y prototipado rápido</p>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="especialidades">
+        <div class="container">
+            <h2>Nuestros Servicios en CNC y Láser</h2>
+            <div class="especialidades-grid">
+                <div class="especialidad-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Fresado CNC</h3>
+                    <p>Mecanizado de precisión en 3 y 5 ejes para piezas complejas en diversos materiales.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Corte Láser</h3>
+                    <p>Corte de alta precisión en acrílico, madera, metal y materiales compuestos.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Grabado Láser</h3>
+                    <p>Marcado y grabado superficial con detalles finos para personalización y branding.</p>
+                </div>
+                <div class="especialidad-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Prototipado Rápido</h3>
+                    <p>Fabricación acelerada de prototipos funcionales para validación de diseños.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías -->
+    <section class="tecnologias-section">
+        <div class="container">
+            <h2>Tecnologías que Utilizamos</h2>
+            <div class="tecnologias-grid">
+                <div class="tecnologia-card">
+                    <div class="tecnologia-img">
+                        <img src="img/fresadora-cnc.jpg" alt="Fresadora CNC">
+                    </div>
+                    <div class="tecnologia-content">
+                        <h3>Fresadoras CNC</h3>
+                        <p>Equipos de 3 y 5 ejes con capacidad para trabajar metales, plásticos y materiales compuestos con tolerancias de hasta ±0.01mm.</p>
+                    </div>
+                </div>
+                <div class="tecnologia-card">
+                    <div class="tecnologia-img">
+                        <img src="img/laser-co2.jpg" alt="Láser CO2">
+                    </div>
+                    <div class="tecnologia-content">
+                        <h3>Láser CO2</h3>
+                        <p>Sistemas de 60W y 100W para corte y grabado en materiales orgánicos como madera, acrílico, textiles y más.</p>
+                    </div>
+                </div>
+                <div class="tecnologia-card">
+                    <div class="tecnologia-img">
+                        <img src="img/laser-fibra.jpg" alt="Láser de Fibra">
+                    </div>
+                    <div class="tecnologia-content">
+                        <h3>Láser de Fibra</h3>
+                        <p>Tecnología para corte de metales con alta precisión y acabados perfectos en acero, aluminio y latón.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de trabajo -->
+    <section class="proceso-section">
+        <div class="container">
+            <h2>Nuestro Proceso de Trabajo</h2>
+            <div class="proceso-steps">
+                <div class="proceso-step">
+                    <div class="step-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3>Recepción de Archivos</h3>
+                    <p>Aceptamos diseños en formatos DXF, DWG, STL, STEP y otros formatos CAD comunes.</p>
+                </div>
+                <div class="proceso-step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Análisis y Optimización</h3>
+                    <p>Revisión técnica del diseño para garantizar manufacturabilidad y sugerir mejoras.</p>
+                </div>
+                <div class="proceso-step">
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Configuración de Máquina</h3>
+                    <p>Selección de parámetros óptimos (velocidad, potencia, herramienta) para cada material.</p>
+                </div>
+                <div class="proceso-step">
+                    <div class="step-icon">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <h3>Producción</h3>
+                    <p>Fabricación con monitoreo constante para garantizar calidad y precisión.</p>
+                </div>
+                <div class="proceso-step">
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Control de Calidad</h3>
+                    <p>Inspección dimensional y de acabados antes de la entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materiales -->
+    <section class="materiales-section">
+        <div class="container">
+            <h2>Materiales que Trabajamos</h2>
+            <div class="materiales-grid">
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Acrílico</h3>
+                    <p>Desde 3mm hasta 25mm en diversos colores y acabados.</p>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Maderas</h3>
+                    <p>Contrachapado, MDF, triplay y maderas macizas.</p>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Metales</h3>
+                    <p>Acero, aluminio, latón y cobre en diversos espesores.</p>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Plásticos</h3>
+                    <p>ABS, policarbonato, PETG, nylon y más.</p>
+                </div>
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3>Materiales Compuestos</h3>
+                    <p>Fibra de carbono, fibra de vidrio y materiales estratificados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos relacionados -->
+    <section class="proyectos-relacionados">
+        <div class="container">
+            <h2>Proyectos de CNC y Láser</h2>
+            <div class="proyectos-grid">
+                <div class="proyecto-card">
+                    <img src="img/proyecto-cnc1.jpg" alt="Piezas mecanizadas">
+                    <h3>Componentes Mecánicos</h3>
+                    <p>Fabricación de piezas para ensamble industrial con tolerancias de ±0.02mm.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="img/proyecto-laser1.jpg" alt="Letreros personalizados">
+                    <h3>Letreros Corporativos</h3>
+                    <p>Diseño y fabricación de señalética y elementos decorativos en acrílico.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="img/proyecto-cnc2.jpg" alt="Prototipo funcional">
+                    <h3>Prototipo Funcional</h3>
+                    <p>Mecanizado CNC de un dispositivo médico en aluminio y plástico de ingeniería.</p>
+                    <a href="#" class="btn-small">Ver detalles</a>
+                </div>
+            </div>
+            <div class="centrado">
+                <a href="index.html#servicios" class="btn"><i class="fas fa-arrow-left"></i> Volver a Áreas de Experiencia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>AGHStudy | Ingeniería & Tecnología</h3>
+                    <p>© 2025 Todos los derechos reservados</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> contacto@aghstudy.com</p>
+                    <p><i class="fas fa-phone"></i> +52 55 1234 5678</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
