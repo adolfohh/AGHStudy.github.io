@@ -66,6 +66,102 @@
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
         }
+        
+        /* Nuevos estilos para la galería de proyectos */
+        .galeria-proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .proyecto-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 250px;
+        }
+        
+        .proyecto-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.3);
+        }
+        
+        .proyecto-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .proyecto-item:hover .proyecto-img {
+            transform: scale(1.1);
+        }
+        
+        .proyecto-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .proyecto-item:hover .proyecto-info {
+            transform: translateY(0);
+        }
+        
+        .proyecto-titulo {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #00b4d8;
+        }
+        
+        .proyecto-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .categoria-filtros {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filtro-btn {
+            padding: 8px 20px;
+            background-color: var(--gray);
+            color: var(--light);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .filtro-btn:hover, .filtro-btn.active {
+            background-color: #00b4d8;
+            color: white;
+        }
+        
+        .proyectos-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .proyectos-subtitulo {
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -90,7 +186,7 @@
     <section class="hero-refrigeracion">
         <div class="hero-content">
             <h2>Refrigeración y Climatización</h2>
-            <p>Tecnología avanzada para el control térmico y ambiental</p>
+            <p>Instalación y mantenimiento profesional de sistemas de climatización residencial</p>
         </div>
     </section>
 
@@ -101,23 +197,23 @@
             <div class="especialidades-grid">
                 <div class="especialidad-card">
                     <i class="fas fa-snowflake"></i>
-                    <h3>Técnico en Sistemas de Refrigeración</h3>
-                    <p>Instalación y mantenimiento de sistemas de refrigeración comercial e industrial, incluyendo cámaras frigoríficas y equipos de conservación.</p>
+                    <h3>Instalación de Aire Acondicionado</h3>
+                    <p>Instalación profesional de equipos split y sistemas de aire acondicionado para hogares y oficinas.</p>
                 </div>
                 <div class="especialidad-card">
                     <i class="fas fa-fan"></i>
-                    <h3>Especialista en Climatización</h3>
-                    <p>Diseño e implementación de sistemas de aire acondicionado central y split para todo tipo de espacios.</p>
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Limpieza y mantenimiento periódico para garantizar el óptimo funcionamiento de sus equipos.</p>
                 </div>
                 <div class="especialidad-card">
                     <i class="fas fa-thermometer-half"></i>
-                    <h3>Técnico en Aire Acondicionado</h3>
-                    <p>Reparación y mantenimiento de equipos de aire acondicionado residenciales y comerciales.</p>
+                    <h3>Reparación de Equipos</h3>
+                    <p>Diagnóstico y solución de problemas en equipos de aire acondicionado residenciales.</p>
                 </div>
                 <div class="especialidad-card">
                     <i class="fas fa-tools"></i>
-                    <h3>Mantenimiento de Sistemas HVAC</h3>
-                    <p>Programas de mantenimiento preventivo y correctivo para sistemas de calefacción, ventilación y aire acondicionado.</p>
+                    <h3>Asesoramiento Técnico</h3>
+                    <p>Recomendaciones para la selección del equipo adecuado según sus necesidades y espacio.</p>
                 </div>
             </div>
         </div>
@@ -131,52 +227,99 @@
                 <div class="paso">
                     <div class="paso-numero">1</div>
                     <h3>Evaluación Técnica</h3>
-                    <p>Análisis detallado de las necesidades de refrigeración/climatización y evaluación del espacio.</p>
+                    <p>Análisis de las necesidades de climatización y evaluación del espacio para determinar el equipo adecuado.</p>
                 </div>
                 <div class="paso">
                     <div class="paso-numero">2</div>
-                    <h3>Diseño Personalizado</h3>
-                    <p>Creación de un sistema adaptado a sus requerimientos específicos y condiciones ambientales.</p>
+                    <h3>Instalación Profesional</h3>
+                    <p>Montaje de equipos con los más altos estándares de calidad, seguridad y estética.</p>
                 </div>
                 <div class="paso">
                     <div class="paso-numero">3</div>
-                    <h3>Instalación Profesional</h3>
-                    <p>Montaje de equipos con los más altos estándares de calidad y seguridad.</p>
+                    <h3>Pruebas y Puesta en Marcha</h3>
+                    <p>Verificación del funcionamiento correcto y explicación del uso al cliente.</p>
                 </div>
                 <div class="paso">
                     <div class="paso-numero">4</div>
                     <h3>Mantenimiento Continuo</h3>
-                    <p>Programas de mantenimiento periódico para garantizar óptimo funcionamiento.</p>
+                    <p>Programas de mantenimiento periódico para garantizar eficiencia y durabilidad.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proyectos relacionados -->
+    <!-- Proyectos relacionados - MODIFICADO -->
     <section class="proyectos-relacionados">
         <div class="container">
-            <h2>Proyectos de Refrigeración</h2>
-            <div class="proyectos-grid">
-                <div class="proyecto-card">
-                    <img src="img/proyecto-refri-1.jpg" alt="Instalación industrial">
-                    <h3>Sistema de Refrigeración Industrial</h3>
-                    <p>Instalación completa para planta procesadora de alimentos.</p>
-                    <a href="#" class="btn-small">Ver detalles</a>
+            <div class="proyectos-header">
+                <h2>Mis Instalaciones Residenciales</h2>
+                <p class="proyectos-subtitulo">Una muestra de mis trabajos de instalación y mantenimiento de sistemas de climatización en hogares</p>
+            </div>
+            
+            <div class="categoria-filtros">
+                <button class="filtro-btn active" data-filter="todos">Todos</button>
+                <button class="filtro-btn" data-filter="instalacion">Instalaciones</button>
+                <button class="filtro-btn" data-filter="mantenimiento">Mantenimiento</button>
+                <button class="filtro-btn" data-filter="reparacion">Reparaciones</button>
+            </div>
+            
+            <div class="galeria-proyectos">
+                <!-- Proyecto 1 -->
+                <div class="proyecto-item" data-categoria="instalacion">
+                    <img src="img/clima.png" alt="Instalación de split en sala" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-titulo">Instalación en Sala de Estar</h3>
+                        <p class="proyecto-desc">Instalación limpia y profesional de equipo split de 18,000 BTU</p>
+                    </div>
                 </div>
-                <div class="proyecto-card">
-                    <img src="img/proyecto-refri-2.jpg" alt="Climatización comercial">
-                    <h3>Climatización Comercial</h3>
-                    <p>Sistema centralizado para centro comercial con 20 unidades.</p>
-                    <a href="#" class="btn-small">Ver detalles</a>
+                
+                <!-- Proyecto 2 -->
+                <div class="proyecto-item" data-categoria="instalacion">
+                    <img src="img/Instalación de fontanería y cableado.png" alt="Instalación de split en dormitorio" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-titulo">Climatización de Dormitorio</h3>
+                        <p class="proyecto-desc">Equipo inverter de 12,000 BTU con instalación discreta</p>
+                    </div>
                 </div>
-                <div class="proyecto-card">
-                    <img src="img/proyecto-refri-3.jpg" alt="Mantenimiento HVAC">
-                    <h3>Mantenimiento HVAC</h3>
-                    <p>Programa anual de mantenimiento para edificio corporativo.</p>
-                    <a href="#" class="btn-small">Ver detalles</a>
+                
+                <!-- Proyecto 3 -->
+                <div class="proyecto-item" data-categoria="mantenimiento">
+                    <img src="img/ChatGPT Image 28 ago 2025, 22_44_30.png" alt="Limpieza de unidad exterior" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-titulo">Mantenimiento Preventivo</h3>
+                        <p class="proyecto-desc">Limpieza completa de unidad exterior y revisión de gas refrigerante</p>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 4 -->
+                <div class="proyecto-item" data-categoria="reparacion">
+                    <img src="img/matenimiento electrico .png" alt="Reparación de unidad interior" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-titulo">Reparación de Fuga</h3>
+                        <p class="proyecto-desc">Detección y solución de fuga en conexiones de unidad interior</p>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 5 -->
+                <div class="proyecto-item" data-categoria="instalacion">
+                    <img src="img/base.png" alt="Instalación en apartamento" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-titulo">Instalación en Apartamento</h3>
+                        <p class="proyecto-desc">Solución compacta para espacio reducido con mínimo impacto visual</p>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 6 -->
+                <div class="proyecto-item" data-categoria="mantenimiento">
+                    <img src="img/matenimiento .png" alt="Limpieza de filtros" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <h3 class="proyecto-titulo">Limpieza de Filtros</h3>
+                        <p class="proyecto-desc">Limpieza profunda de filtros y componentes internos para mejorar eficiencia</p>
+                    </div>
                 </div>
             </div>
-            <div class="centrado">
+            
+            <div class="centrado" style="margin-top: 50px;">
                 <a href="index.html#servicios" class="btn"><i class="fas fa-arrow-left"></i> Volver a Áreas de Experiencia</a>
             </div>
         </div>
@@ -201,5 +344,32 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Filtrado de proyectos
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filtro-btn');
+            const projectItems = document.querySelectorAll('.proyecto-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    projectItems.forEach(item => {
+                        if (filter === 'todos' || item.getAttribute('data-categoria') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
