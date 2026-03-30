@@ -134,37 +134,38 @@
             margin-top: 30px;
             flex-wrap: wrap;
         }
-        /* Estilos para el botón de WhatsApp */
+/* Estilos para el botón de WhatsApp - Versión responsive */
 .whatsapp-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366; /* Verde oficial de WA */
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
     color: #fff;
     border-radius: 50px;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+    z-index: 9999;
     transition: all 0.3s ease;
     text-decoration: none;
+    cursor: pointer;
 }
 
-/* Efecto al pasar el mouse (Hover) */
+/* Efecto hover (PC) */
 .whatsapp-btn:hover {
-    background-color: #ff0000; /* Cambia a tu rojo de marca */
+    background-color: #ff0000;
     transform: scale(1.1);
     color: white;
 }
 
-/* Tooltip (Texto de ayuda que aparece) */
+/* Tooltip solo visible en PC */
 .tooltip-whatsapp {
     position: absolute;
-    right: 75px;
+    right: 70px;
     background-color: #1a1a1a;
     color: white;
     padding: 8px 15px;
@@ -175,6 +176,7 @@
     visibility: hidden;
     transition: opacity 0.3s;
     border: 1px solid #ff0000;
+    pointer-events: none;
 }
 
 .whatsapp-btn:hover .tooltip-whatsapp {
@@ -182,7 +184,7 @@
     visibility: visible;
 }
 
-/* Animación de entrada */
+/* Animación de pulsación */
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
     70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -191,6 +193,53 @@
 
 .whatsapp-btn {
     animation: pulse 2s infinite;
+}
+
+/* ========== RESPONSIVE PARA MÓVIL ========== */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        /* Asegurar visibilidad */
+        position: fixed !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 99999 !important;
+    }
+    
+    /* Ocultar tooltip en móvil para mejor experiencia */
+    .tooltip-whatsapp {
+        display: none;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        bottom: 12px;
+        right: 12px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+}
+/* Asegurar que el botón sea visible */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Evitar que otros elementos oculten el botón */
+footer, .container, section {
+    position: relative;
+    z-index: 1;
 }
     </style>
 </head>
@@ -493,8 +542,8 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <h3>AGHStudy | Ingeniería & Tecnología</h3>
-                    <p>Transformando ideas en realidades técnicas desde 2015</p>
-                    <p>© 2025 Todos los derechos reservados</p>
+                    <p>"© 2024 AGHStudy. Soluciones de Ingeniería vigentes."</p>
+                    <p>"© 2024 AGHStudy. Todos los derechos reservados."</p>
                 </div>
                 <div class="footer-links">
                     <h4>Enlaces rápidos</h4>
