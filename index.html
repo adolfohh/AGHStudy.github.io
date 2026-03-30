@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        
         /* Estilos adicionales para la página principal */
         .hero {
             position: relative;
@@ -195,20 +196,16 @@
     animation: pulse 2s infinite;
 }
 
-/* ========== RESPONSIVE PARA MÓVIL ========== */
+/* ========== RESPONSIVE PARA MÓVIL OPTIMIZADO ========== */
 @media (max-width: 768px) {
     .whatsapp-btn {
-        bottom: 15px;
-        right: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-        /* Asegurar visibilidad */
-        position: fixed !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 99999 !important;
+        bottom: 20px; /* Un poco más arriba para que no pegue al borde */
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+        position: fixed !important; /* Mantiene la posición al hacer scroll */
+        z-index: 999999 !important; /* Por encima de todo */
     }
     
     /* Ocultar tooltip en móvil para mejor experiencia */
@@ -243,15 +240,9 @@ footer, .container, section {
 }
     </style>
 </head>
-<!-- Mensaje personalizado -->
-<a href="https://wa.me/529625998858?text=Hola%20Adolfo,%20vi%20tu%20portafolio%20y%20me%20interesa%20contratar%20tus%20servicios." 
-   class="whatsapp-btn" 
-   target="_blank" 
-   rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
-    <span class="tooltip-whatsapp">¡Cotiza tu proyecto aquí!</span>
-</a>
+
 <body>
+ 
     <!-- Encabezado -->
     <header>
         <div class="logo">
@@ -572,5 +563,13 @@ footer, .container, section {
             </div>
         </div>
     </footer>
+       <!-- Mensaje personalizado -->
+<a href="https://wa.me/529625998858?text=Hola%20Adolfo,%20vi%20tu%20portafolio%20y%20me%20interesa%20contratar%20tus%20servicios." 
+   class="whatsapp-btn" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip-whatsapp">¡Cotiza tu proyecto aquí!</span>
+</a>
 </body>
 </html>
