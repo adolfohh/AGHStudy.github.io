@@ -134,8 +134,73 @@
             margin-top: 30px;
             flex-wrap: wrap;
         }
+        /* Estilos para el botón de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* Verde oficial de WA */
+    color: #fff;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.whatsapp-btn:hover {
+    background-color: #ff0000; /* Cambia a tu rojo de marca */
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Tooltip (Texto de ayuda que aparece) */
+.tooltip-whatsapp {
+    position: absolute;
+    right: 75px;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    border: 1px solid #ff0000;
+}
+
+.whatsapp-btn:hover .tooltip-whatsapp {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animación de entrada */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-btn {
+    animation: pulse 2s infinite;
+}
     </style>
 </head>
+<a href="https://wa.me/525512345678?text=Hola%20AGHStudy,%20me%20gustaría%20solicitar%20una%20cotización%20para%20un%20proyecto." 
+   class="whatsapp-btn" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip-whatsapp">¡Cotiza tu proyecto aquí!</span>
+</a>
 <body>
     <!-- Encabezado -->
     <header>
@@ -449,9 +514,9 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                     <div class="footer-contact">
-                        <p><i class="fas fa-envelope"></i> contacto@aghstudy.com</p>
-                        <p><i class="fas fa-phone"></i> +52 55 1234 5678</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
+                        <p><i class="fas fa-envelope"></i> aghstudy.x32@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +52 962 599 8858</p>
+                        <p><i class="fas fa-map-marker-alt"></i> tuxtla gutiérrez chiapas, México</p>
                     </div>
                 </div>
             </div>
